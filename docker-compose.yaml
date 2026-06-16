@@ -1,0 +1,36 @@
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    restart: 'no'
+    entrypoint: ['/bin/sh', '-c']
+    command:
+      - |
+        set -e
+        npm run lint
+        npm run test:node
+        npm run test:jest
+        npm run test:vitest
+
+  bun:
+    build:
+      context: .
+      dockerfile: Dockerfile.bun
+    restart: 'no'
+    entrypoint: ['/bin/sh', '-c']
+    command:
+      - |
+        set -e
+        bun test bun/
+
+  deno:
+    build:
+      context: .
+      dockerfile: Dockerfile.deno
+    restart: 'no'
+    entrypoint: ['/bin/sh', '-c']
+    command:
+      - |
+        set -e
+        deno test -A dist/test/
