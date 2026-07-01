@@ -1,5 +1,5 @@
 import { BigNumber, toBigNumber } from '../type.js';
-// Sentinel for "no expected argument was passed" — distinct from `undefined`,
+// Sentinel for "no expected argument was passed" - distinct from `undefined`,
 // which is a real value to compare against (so toBeBigNumber() is a type check
 // but toBeBigNumber(undefined) is an equality check that fails).
 const TYPE_ONLY = Symbol('type-only');
@@ -34,7 +34,7 @@ function combined(name, label, isType, convert, equals) {
         if (arg === TYPE_ONLY) {
             return build(this, name, `${label} type`, isType(received), received, label);
         }
-        let pass = false;
+        let pass;
         let shown = arg;
         try {
             shown = convert(arg);

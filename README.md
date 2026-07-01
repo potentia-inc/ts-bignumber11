@@ -3,8 +3,8 @@
 Cross-runtime utilities and test matchers for
 [bignumber.js](https://github.com/MikeMcl/bignumber.js) `^11.0.0`.
 
-- **Helpers** — `toBigNumber()` / `toBigNumberOrNil()` for lenient coercion.
-- **Test matchers** — the same set of `BigNumber` matchers for
+- **Helpers** - `toBigNumber()` / `toBigNumberOrNil()` for lenient coercion.
+- **Test matchers** - the same set of `BigNumber` matchers for
   [jest](https://jestjs.io), [vitest](https://vitest.dev) and
   [bun:test](https://bun.sh/docs/cli/test), plus a framework-agnostic entry
   point.
@@ -46,7 +46,7 @@ toBigNumberOrNil('foobar') // throws TypeError
 ```
 
 These are strict coercions: a returned value is always a valid `BigNumber` (or
-`±Infinity`). `toBigNumber()` returns its argument unchanged when it is already a
+`+/-Infinity`). `toBigNumber()` returns its argument unchanged when it is already a
 valid `BigNumber`, so it is safe to call repeatedly.
 
 ## Test matchers
@@ -81,7 +81,7 @@ custom matchers are fully typed.
 Each `toBe*` matcher does a **type check** when called with no argument and a
 **type-and-value equality** check when given one. `toEqualBigNumber` /
 `toEqualBigNumberString` are aliases for `toBeBigNumber` / `toBeBigNumberString`
-— pick whichever reads better.
+- pick whichever reads better.
 
 ```typescript
 import { BigNumber, toBigNumber } from '@potentia/bignumber11'

@@ -4,7 +4,7 @@ function isNullish(x) {
     return x === null || x === undefined;
 }
 // Strict coercion: throw on nullish and on unparseable input. NaN counts as
-// invalid, so a returned BigNumber is always a valid number (or ±Infinity). The
+// invalid, so a returned BigNumber is always a valid number (or +/-Infinity). The
 // `...OrNil` variant returns undefined for nullish but still throws on invalid
 // input.
 export function toBigNumber(x) {
