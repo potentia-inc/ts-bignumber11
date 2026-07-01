@@ -7,7 +7,7 @@ COPY . .
 RUN npm run dist
 
 # ... then run the node:test suite (the built artifact) on deno. The whole tree
-# — including node_modules (bignumber.js) — is carried over so deno's node
+# - including node_modules (bignumber.js) - is carried over so deno's node
 # compatibility can resolve the runtime imports.
 FROM denoland/deno:latest
 WORKDIR /app

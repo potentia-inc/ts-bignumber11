@@ -17,7 +17,7 @@ export interface MatcherUtils {
 
 export interface MatcherContext {
   // Optional so the richer jest/bun/vitest contexts (where these are optional)
-  // remain assignable to this shared shape — keeping expect.extend(matchers)
+  // remain assignable to this shared shape - keeping expect.extend(matchers)
   // type-safe for consumers without a cast.
   isNot?: boolean
   promise?: string
@@ -47,7 +47,7 @@ type Matcher = (
   ...rest: unknown[]
 ) => MatcherResult
 
-// Sentinel for "no expected argument was passed" — distinct from `undefined`,
+// Sentinel for "no expected argument was passed" - distinct from `undefined`,
 // which is a real value to compare against (so toBeBigNumber() is a type check
 // but toBeBigNumber(undefined) is an equality check that fails).
 const TYPE_ONLY = Symbol('type-only')
